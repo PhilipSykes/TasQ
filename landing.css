@@ -1,0 +1,26 @@
+* {
+    cursor: none;
+}
+
+#cursor {
+    mix-blend-mode: normal;
+    visibility: hidden;
+
+    position: fixed;
+    width: 1.75rem;
+    height: 1.75rem;
+
+    border-radius: 100vw;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #0F7DFF;
+    
+    pointer-events: none ;
+
+    transition: width 0.3s, height 0.5;
+}
+#cursor.shrink {
+    height: 0;
+    width: 0;
+}

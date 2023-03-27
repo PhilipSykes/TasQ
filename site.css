@@ -108,6 +108,13 @@ h1.landing-header {
     color: var(--primary-blue);
 }
 
+.button.login {
+    transition: 0.3s ease-out;
+}
+.button.login:hover {
+    font-size: 1.6rem;
+}
+
 .form {
     background-color: var(--light-grey);
 
