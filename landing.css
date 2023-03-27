@@ -18,7 +18,7 @@
     
     pointer-events: none ;
 
-    transition: width 0.3s, height 0.5;
+    transition: width 0.2s, height 0.2s;
 }
 #cursor.shrink {
     height: 0;
