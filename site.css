@@ -202,3 +202,102 @@ h1.form-header {
     flex-direction: row;
     width: 500px;
 }
+
+.form-error {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 20px;
+}
+
+nav.navbar {
+    height: 70px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+
+    background-color: var(--light-grey);
+}
+
+.nav-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.nav-buttons {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+
+    color: var(--black);
+    text-decoration: none;
+}
+.nav-buttons:hover {
+    color: var(--primary-blue);
+}
+.nav-buttons.current{
+    color: var(--primary-blue);
+}
+.nav-buttons.current:hover{
+    color: var(--primary-blue-light);
+}
+
+.page-title {
+    font-size: 48px;
+}
+
+.main-container{
+    padding-inline: 7vw;
+    padding-block: 50px;
+}
+
+.workspace-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.workspace {
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+
+    background-color: var(--light-grey);
+
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.workspace-add {
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    opacity: 1;
+
+    background-color: var(--light-grey);
+
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    transition: 0.15s;
+
+    text-align: center;
+    padding-block: 200px;
+
+    font-size: 150px;
+
+    color: #888888;
+
+    font-weight: 300;
+
+    text-decoration: none;
+}
+.workspace-add:hover {
+    opacity: 0.5;
+}

@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+$_SESSION['logged-in'] = false;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
