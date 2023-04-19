@@ -66,8 +66,9 @@ if (isset($_POST['submit'])){
         if($usernameErr = "") {
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $_POST['username'];
+            $_SESSION['picpath'] = "ProfilePic/default.png";
 
-            header("Location: /TasQ/workspaces.php/");
+            header("Location: /TasQ/workspaces.php");
             exit();
         }
     }

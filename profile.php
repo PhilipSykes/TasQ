@@ -26,7 +26,21 @@ session_start();
 </nav>
 
 <div class="main-container">
-    <h1 class="page-title">Profile</h1>
+    <div class="page-header-container">
+        <h1 class="page-title">Profile</h1>
+        <a href="signout.php" class="button-primary">Sign Out</a>
+    </div>
+
+
+    <img class="profile-pic" src="<?php echo $_SESSION['picpath']; ?>">
+
+    <h3 class="profile-uname-label">Username</h3>
+    <div class="username-container">
+        <h2 class="profile-uname">
+            <?php echo $_SESSION['username']?>
+        </h2>
+        <a href="" class="edit-button">change</a>
+    </div>
 </div>
 
 

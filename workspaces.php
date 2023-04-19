@@ -32,7 +32,21 @@ session_start();
     <h1 class="page-title">Workspaces</h1>
 
     <div class="workspace-container">
-        <div class="workspace"></div>
+
+
+        <?php
+        include_once('fetchworkspaces.php');
+        
+        $ownedWorkspaceArray = fetchOwnedWorkspace();
+
+        for ($i = 0; $i < count($ownedWorkspaceArray); $i++):
+        ?>
+
+        <div class="workspace"><?php echo $ownedWorkspaceArray[$i]['SpaceName']?></div>
+
+        <?php endfor; ?>
+
+
         <a href="create-workspace.php" class="workspace-add">+</a>
     </div>
 </div>

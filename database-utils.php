@@ -66,3 +66,22 @@ function Login($username, $password) {
     }
     return $rows_array;
 }
+
+function FetchPfp() {
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+
+    $stmt = $db->prepare('SELECT PicPath FROM User WHERE Username=:uname');
+
+    $stmt->bindParam(':uname', $_SESSION['username'] , SQLITE3_TEXT);
+
+    $result = $stmt->execute();
+
+    $rows_array = [];
+
+    while($row = $result->fetchArray()){
+        $rows_array[] = $row;
+    }
+
+    $_SESSION['picpath'] = $rows_array[0]['PicPath'];
+
+}

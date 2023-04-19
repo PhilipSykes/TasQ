@@ -72,7 +72,7 @@ h1.landing-header {
 .button-primary {
     text-decoration: none;
 
-    font-size: 1.5rem;
+    font-size: 17px;
     font-weight: 500;
     
     background-color: var(--primary-blue);
@@ -80,6 +80,7 @@ h1.landing-header {
 
     padding-inline: 1.5rem;
     padding-block: 0.75rem;
+    height: fit-content;
 
     border-radius: 100vw;
 
@@ -249,6 +250,11 @@ nav.navbar {
 
 .page-title {
     font-size: 48px;
+    font-weight: bold;
+
+    margin-block: 32px;
+    outline: none;
+    border: none;
 }
 
 .main-container{
@@ -300,4 +306,144 @@ nav.navbar {
 }
 .workspace-add:hover {
     opacity: 0.5;
+}
+
+.page-header-container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-uname-label {
+    font-size: 17px;
+    height: fit-content;
+
+    margin-block: 10px;
+}
+.profile-uname { 
+    margin: 0;
+
+    font-weight: normal;
+
+    color: #888888;
+}
+
+.edit-button {
+    color: var(--primary-blue);
+    font-weight: light;
+
+    text-decoration: none;
+
+    padding-left: 10px;
+}
+.edit-button:hover {
+    text-decoration: underline;
+}
+
+.username-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.profile-pic {
+    height: 130px;
+    width: 130px;
+
+    border-radius: 100vw;
+
+    margin-block: 15px;
+
+    transform: translate(-5px);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-name {
+    font-size: 40px;
+    font-weight: normal;
+
+    margin-top: 12px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+
+    color: #888888;
+}
+
+.list-name::placeholder {
+    color: #888888;
+    opacity: 0.5; 
+  }
+
+.item-name {
+    font-size: 24px;
+    font-weight: normal;
+
+    padding: 0;
+
+    outline: none;
+    border: none;
+
+    color: #888888;
+
+    height: fit-content;
+
+}
+
+.item-name::placeholder {
+    color: #888888;
+    opacity: 0.5; 
+}
+
+.list-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-item-btn {
+    width: 28px;
+    height: 28px;
+
+
+    font-size: 15px;
+    color: #FFF;
+
+    padding: 0;
+
+    outline: none;
+    border: none;
+
+    background-color: var(--primary-blue);
+
+    padding: none;
+
+    border-radius: 100vw;
+
+    margin-right: 15px;
+
+    transition: 0.15s;
+}
+.add-item-btn:hover {
+    background-color: var(--primary-blue-light);
+}
+
+.item-container {
+    display: flex;
+    align-content: center;
+
+    margin-top: 12px;
+    margin-bottom: 5px;
+
 }

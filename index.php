@@ -1,7 +1,5 @@
 <?php 
 session_start();
-
-$_SESSION['logged-in'] = false;
 ?>
 
 
@@ -19,7 +17,7 @@ $_SESSION['logged-in'] = false;
 <body>
     <div class="centered-col">
         <h1 class="landing-header">TasQ</h1>
-        <a href="signup.php" class="button-primary sign-up">Sign Up</a>
+        <a href="signup.php" class="button-primary sign-up" style="font-size: 1.5rem;">Sign Up</a>
         <a href="login.php" class="button login">Login</a>
     </div>
 

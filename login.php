@@ -41,8 +41,10 @@ if (isset($_POST['submit'])){
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $rows_array[0]['Username'];
 
-            header("Location: /TasQ/workspaces.php/");
-            exit();
+            FetchPfp();
+
+            header("Location: workspaces.php");
+            exit;
         }
     }
     
