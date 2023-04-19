@@ -85,3 +85,36 @@ function FetchPfp() {
     $_SESSION['picpath'] = $rows_array[0]['PicPath'];
 
 }
+
+
+function AddList($name) {
+    
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+    
+    $sql = "INSERT INTO List(SpaceID, ListName) VALUES(:spaceid, :listname)";
+    
+    $stmt = $db->prepare($sql);
+        
+    $stmt-> bindParam(':listname', $name, SQLITE3_TEXT);
+    $stmt-> bindParam(':spaceid', $_SESSION['currentWorkspace'], SQLITE3_TEXT);
+    
+    $stmt->execute();
+}
+
+function FetchLists($spaceId) {
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+
+    $stmt = $db->prepare('SELECT ListName FROM List WHERE SpaceID=:spaceid');
+
+    $stmt->bindParam(':spaceid', $spaceId , SQLITE3_TEXT);
+
+    $result = $stmt->execute();
+
+    $rows_array = [];
+
+    while($row = $result->fetchArray()){
+        $rows_array[] = $row;
+    }
+
+    return $rows_array;
+}

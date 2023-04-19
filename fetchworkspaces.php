@@ -5,7 +5,7 @@ function fetchOwnedWorkspace() {
 
 $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
 
-$sql = 'SELECT SpaceName FROM Workspace WHERE OwnerName=:ownername';
+$sql = 'SELECT SpaceName, SpaceID FROM Workspace WHERE OwnerName=:ownername';
 $stmt = $db->prepare($sql);
 
 $stmt->bindParam(':ownername', $_SESSION['username'] , SQLITE3_TEXT);

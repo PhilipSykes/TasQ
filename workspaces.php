@@ -42,7 +42,22 @@ session_start();
         for ($i = 0; $i < count($ownedWorkspaceArray); $i++):
         ?>
 
-        <div class="workspace"><?php echo $ownedWorkspaceArray[$i]['SpaceName']?></div>
+        <a class="workspace" href="loadData.php?id=<?php echo $ownedWorkspaceArray[$i]['SpaceID']; ?>">
+        <?php  
+        if($ownedWorkspaceArray[$i]['SpaceName'] != null){
+            echo $ownedWorkspaceArray[$i]['SpaceName'];
+        }
+        else {
+            ?>
+            <div class="unnamed">
+            <?php
+            echo "Unnamed Workspace";
+            ?>
+            </div>
+            <?php
+        }
+        ?>
+        </a>
 
         <?php endfor; ?>
 

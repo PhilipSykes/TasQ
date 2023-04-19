@@ -269,7 +269,7 @@ nav.navbar {
 }
 
 .workspace {
-    height: 600px;
+    height: 200px;
     width: 400px;
     border-radius: 20px;
     padding: 20px;
@@ -278,10 +278,18 @@ nav.navbar {
 
     margin-right: 30px;
     margin-bottom: 30px;
+
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1D1D1D;
+}
+.unnamed {
+    color: #888888;
 }
 
 .workspace-add {
-    height: 600px;
+    height: 200px;
     width: 400px;
     border-radius: 20px;
     opacity: 1;
@@ -294,13 +302,12 @@ nav.navbar {
     transition: 0.15s;
 
     text-align: center;
-    padding-block: 200px;
-
-    font-size: 150px;
+    font-size: 100px;
+    line-height: 200px;
 
     color: #888888;
 
-    font-weight: 300;
+    font-weight: 100;
 
     text-decoration: none;
 }
@@ -410,6 +417,10 @@ nav.navbar {
 .list-content {
     display: flex;
     flex-direction: column;
+
+    width: 500px;
+    height: 800px;
+    overflow: scroll;
 }
 
 .add-item-btn {
