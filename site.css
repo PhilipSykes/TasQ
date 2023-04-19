@@ -22,6 +22,7 @@ body {
     padding: 0;
 
     background-color: var(--white);
+
 }
 
 .centered-col{
@@ -222,6 +223,11 @@ nav.navbar {
     padding-inline: 20px;
 
     background-color: var(--light-grey);
+
+    position: sticky;
+    z-index: 100;
+
+    top:0;
 }
 
 .nav-title {
@@ -427,8 +433,10 @@ nav.navbar {
     width: 28px;
     height: 28px;
 
+    line-height: 28px;
 
-    font-size: 15px;
+    font-size: 25px;
+    font-weight: 800;
     color: #FFF;
 
     padding: 0;
@@ -440,11 +448,10 @@ nav.navbar {
 
     padding: none;
 
-    border-radius: 100vw;
+    border-radius: 2px;
 
     margin-right: 15px;
 
-    transition: 0.15s;
 }
 .add-item-btn:hover {
     background-color: var(--primary-blue-light);
@@ -457,4 +464,69 @@ nav.navbar {
     margin-top: 12px;
     margin-bottom: 5px;
 
+    width: fit-content;
+
+}
+
+.checkbox {
+    width: 28px;
+    height: 28px;
+
+    color: #FFF;
+
+    background-color: var(--primary-blue);
+
+    margin: 0;
+    margin-right: 15px;
+
+}
+
+.right-click-menu {
+    position: absolute;
+    opacity: 0;
+    height: 40px;
+    width: 200px;
+
+    background-color: #F4F4F4;
+
+    border-radius: 7px;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+    transition: opacity 0.15s;
+
+    z-index: 99;
+}
+
+.right-click-button {
+    height: 30px;
+    width: 190px;
+
+    border-radius: 2px;
+    border: none;
+
+    background-color: transparent;
+
+    transition: 0.2s;
+
+    line-height: 30px;
+
+    font-size: 15px;
+    font-weight: 400;
+    text-align:left;
+
+    color: #1D1D1D;
+
+    padding: none;
+
+}
+.right-click-button:hover {
+    background-color: var(--primary-blue-light);
+    color: white;
+}
+
+div.list{
+    width: fit-content;
 }

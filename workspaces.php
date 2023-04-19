@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+include_once('database-utils.php');
+
 ?>
 
 
@@ -17,6 +20,12 @@ session_start();
     
 </head>
 <body>
+
+<div class="right-click-menu">
+    <form method="POST">
+        <button name="delete" class="right-click-button" onclick="deletePressed()">Delete</button>
+    </form>
+</div>
 
 <nav class="navbar">
     <div class="nav-title">TasQ</div>
@@ -42,7 +51,7 @@ session_start();
         for ($i = 0; $i < count($ownedWorkspaceArray); $i++):
         ?>
 
-        <a class="workspace" href="loadData.php?id=<?php echo $ownedWorkspaceArray[$i]['SpaceID']; ?>">
+        <a class="workspace" href="loadData.php?id=<?php echo $ownedWorkspaceArray[$i]['SpaceID']; ?>" id="<?php echo $ownedWorkspaceArray[$i]['SpaceID']; ?>">
         <?php  
         if($ownedWorkspaceArray[$i]['SpaceName'] != null){
             echo $ownedWorkspaceArray[$i]['SpaceName'];
@@ -65,6 +74,13 @@ session_start();
         <a href="create-workspace.php" class="workspace-add">+</a>
     </div>
 </div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"></script>
+<script src="right-click.js"></script>
 
 </body>
 </html>

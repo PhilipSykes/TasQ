@@ -104,9 +104,41 @@ function AddList($name) {
 function FetchLists($spaceId) {
     $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
 
-    $stmt = $db->prepare('SELECT ListName FROM List WHERE SpaceID=:spaceid');
+    $stmt = $db->prepare('SELECT ListName, ListID FROM List WHERE SpaceID=:spaceid');
 
     $stmt->bindParam(':spaceid', $spaceId , SQLITE3_TEXT);
+
+    $result = $stmt->execute();
+
+    $rows_array = [];
+
+    while($row = $result->fetchArray()){
+        $rows_array[] = $row;
+    }
+
+    return $rows_array;
+}
+
+function AddTask($taskName, $listId) {
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+
+    $sql = "INSERT INTO Task(TaskName, Completed, ListID) VALUES(:taskname, :completed, :listid)";
+    
+    $stmt = $db->prepare($sql);
+
+    $zero = 0;
+        
+    $stmt-> bindParam(':taskname', $taskName, SQLITE3_TEXT);
+    $stmt-> bindParam(':completed', $zero, SQLITE3_TEXT);
+    $stmt-> bindParam(':listid', $listId, SQLITE3_TEXT);
+    
+    $stmt->execute();
+}
+
+function FetchTasks() {
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+
+    $stmt = $db->prepare('SELECT TaskID, TaskName, ListID, Completed FROM Task');
 
     $result = $stmt->execute();
 
