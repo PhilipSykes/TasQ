@@ -13,10 +13,6 @@
 <?php 
 session_start();
 
-if($_SESSION['logged-in']) {
-    header("Location: /TasQ/worspaces.php");
-}
-
 include_once('database-utils.php');
 include_once('utils.php');
 
