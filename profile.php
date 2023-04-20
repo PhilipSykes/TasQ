@@ -1,5 +1,13 @@
 <?php
 session_start();
+include_once('database-utils.php');
+
+if(isset($_POST['update']))
+{
+    if($_POST['username'] != ""){
+        UpdateUsername($_POST['username']);
+    }
+}
 ?>
 
 
@@ -36,11 +44,14 @@ session_start();
 
     <h3 class="profile-uname-label">Username</h3>
     <div class="username-container">
-        <h2 class="profile-uname">
-            <?php echo $_SESSION['username']?>
-        </h2>
-        <a href="" class="edit-button">change</a>
+        <form method="POST">
+            <input class="profile-uname" type="text" name="username" placeholder="Username" value="<?php echo $_SESSION['username']?>" autocomplete="off"></input>
+            <button name="update" class="edit-button">Change Username</button>
+            <a style="color: red;"class="edit-button" href="delete-account.php">Delete Account</a>
+        </form>
     </div>
+
+    
 </div>
 
 

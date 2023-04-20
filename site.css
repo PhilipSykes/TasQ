@@ -336,6 +336,12 @@ nav.navbar {
     margin-block: 10px;
 }
 .profile-uname { 
+    font-size: 36px;
+
+    background-color: none;
+    outline: none;
+    border: none;
+
     margin: 0;
 
     font-weight: normal;
@@ -346,6 +352,11 @@ nav.navbar {
 .edit-button {
     color: var(--primary-blue);
     font-weight: light;
+    font-size: 15px;
+
+    background-color: transparent;
+    outline: none;
+    border: none;
 
     text-decoration: none;
 
@@ -465,7 +476,6 @@ nav.navbar {
     margin-bottom: 5px;
 
     width: fit-content;
-
 }
 
 .checkbox {

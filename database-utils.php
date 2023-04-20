@@ -152,3 +152,38 @@ function FetchTasks() {
 
     return $rows_array;
 }
+
+function UpdateUsername($username) {
+    $db = new SQLite3("/Applications/XAMPP/xamppfiles/data/TasQ.db");
+
+    $sql = "SELECT Username FROM User WHERE Username=:username";
+    $stmt = $db->prepare($sql);
+    $stmt-> bindParam(':username', $username, SQLITE3_TEXT);
+
+    $result = $stmt->execute();
+
+    $rows_array = [];
+
+    while($row = $result->fetchArray()){
+        $rows_array[] = $row;
+    }
+
+    if($rows_array == null){
+        $sql = "UPDATE UserAuth SET Username=:username WHERE Username=:old";
+        $stmt = $db->prepare($sql);
+        $stmt-> bindParam(':username', $username, SQLITE3_TEXT);
+        $stmt-> bindParam(':old', $_SESSION['username'], SQLITE3_TEXT);
+
+        $stmt->execute();
+
+        $sql = "UPDATE User SET Username=:username WHERE Username=:old";
+        $stmt = $db->prepare($sql);
+        $stmt-> bindParam(':username', $username, SQLITE3_TEXT);
+        $stmt-> bindParam(':old', $_SESSION['username'], SQLITE3_TEXT);
+
+        $stmt->execute();
+
+        $_SESSION['username'] = $username;
+    }
+}
+
