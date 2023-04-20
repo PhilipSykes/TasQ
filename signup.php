@@ -59,12 +59,12 @@ if (isset($_POST['submit'])){
     if ($allFields) {
         $usernameErr = SignUp($_POST['fname'], $_POST['lname'], $_POST['username'], $_POST['email'], $_POST['password']);
 
-        if($usernameErr = "") {
+        if($usernameErr == "") {
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['picpath'] = "ProfilePic/default.png";
-
-            header("Location: /TasQ/workspaces.php");
+            
+            header("Location: workspaces.php");
             exit();
         }
     }

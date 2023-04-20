@@ -41,6 +41,8 @@ function SignUp($fname , $lname, $username, $email, $password) {
         $stmt->bindParam(':password', $password , SQLITE3_TEXT);
 
         $stmt->execute();
+
+        return "";
     }
     else{
         return "Username is already in use";

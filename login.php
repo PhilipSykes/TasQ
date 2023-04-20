@@ -37,8 +37,6 @@ if (isset($_POST['submit'])){
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $rows_array[0]['Username'];
 
-            FetchPfp();
-
             header("Location: workspaces.php");
             exit;
         }
@@ -60,7 +58,7 @@ if (isset($_POST['submit'])){
                 <input type="password" class="form-text" name="password">
             </div>
             <div class="form-section submit">
-                <input type="submit" class="button-primary form-button" value="Sign Up!" name="submit">
+                <input type="submit" class="button-primary form-button" value="Log in!" name="submit">
             </div>
         </form>
     </div>
